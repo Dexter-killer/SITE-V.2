@@ -43,34 +43,66 @@
                 <div class="card bg-dark border-warning mb-4">
                     <div class="card-body">
                         <h3 class="card-title h4 text-white mb-4">Контактная форма</h3>
-                        
-                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-    
-                        <!-- ВАЖНО: Вставьте ваш Access Key -->
-                        <input type="hidden" name="access_key" value="a3cde093-1728-487a-b34a-cd676a5cd4f5">
-                        
-                        <!-- Скрытое поле для защиты от спама -->
-                        <input type="hidden" name="subject" value="Новое сообщение с сайта">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        
-                        <!-- Ваши поля формы -->
-                        <div class="form-group">
-                            <label for="name">Имя</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Сообщение</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit">Отправить</button>
-                    </form>
+                                                    
+                            <!-- Контактная форма -->
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <!-- Поле Имя -->
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label text-light">Имя *</label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control bg-secondary border-warning text-light" 
+                                                id="name" 
+                                                name="name"
+                                                placeholder="Введите ваше имя"
+                                                required
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!-- Поле Email -->
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label text-light">Email *</label>
+                                            <input 
+                                                type="email" 
+                                                class="form-control bg-secondary border-warning text-light" 
+                                                id="email" 
+                                                name="email"
+                                                placeholder="example@mail.ru"
+                                                required
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Поле Сообщение -->
+                                <div class="mb-3">
+                                    <label for="message" class="form-label text-light">Сообщение *</label>
+                                    <textarea 
+                                        class="form-control bg-secondary border-warning text-light" 
+                                        id="message" 
+                                        name="message"
+                                        rows="5"
+                                        placeholder="Напишите ваше сообщение..."
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <!-- Скрытое поле для защиты от спама (обязательно!) -->
+                                <input type="checkbox" name="botcheck" class="d-none" style="display: none;">
+
+                                <!-- Кнопка отправки -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-warning btn-lg px-5">
+                                        <i class="bi bi-send me-2"></i>
+                                        Отправить сообщение
+                                    </button>
+                                </div>
+                            </form>
+
                     </div>
                 </div>
 
